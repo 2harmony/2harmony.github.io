@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[示范]]></title>
+    <url>%2F2019%2F04%2F16%2Findex%2F</url>
+    <content type="text"><![CDATA[一级二级三级** 列表1 列表2 a 子列表 b 子列表 列表3百度字体是线的哦字体是加粗了的 &lt;html&gt;&lt;/html&gt; 1#include 内容是引用的 $sum$ 12345678910111213141516171819# 一级## 二级### 三级***---***----------- 列表1- 列表2 a 子列表 b 子列表- 列表3 [百度](https://www.baidu.com) ![新客站]() *字体是线的哦* **字体是加粗了的** `&lt;html&gt;&lt;/html&gt;` #include 12&gt; 内容是引用的]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[耍杂技的牛]]></title>
+    <url>%2F2019%2F04%2F16%2Fpage%2F</url>
+    <content type="text"><![CDATA[农民约翰的N头奶牛（编号为1..N）计划逃跑并加入马戏团，为此它们决定练习表演杂技。 奶牛们不是非常有创意，只提出了一个杂技表演： 叠罗汉，表演时，奶牛们站在彼此的身上，形成一个高高的垂直堆叠。 奶牛们正在试图找到自己在这个堆叠中应该所处的位置顺序。 这N头奶牛中的每一头都有着自己的重量Wi以及自己的强壮程度Si。 一头牛只撑不住的可能性取决于它头上所有牛的总重量（不包括它自己）减去它的身体强壮程度的值，现在称该数值为风险值，风险值越大，这只牛撑不住的可能性越高。 您的任务是确定奶牛的排序，使得所有奶牛的风险值中的最大值尽可能的小。 输入格式第一行输入整数N，表示奶牛数量。 接下来N行，每行输入两个整数，表示牛的重量和强壮程度，第i行表示第i头牛的重量Wi以及它的强壮程度Si。 输出格式输出一个整数，表示最大风险值的最小可能值。 数据范围1≤N≤50000,1≤Wi≤10,000,1≤Si≤1,000,000,000 输入样例：1234310 32 53 3 输出样例：12 (贪心)思路: 与国王游戏的贪心策略相似， 我们先分析每头牛的危险值 = 他前面牛的w(重量值)和 - 自身的s(强壮值)，要使每头牛的危险值最小，这显然是与w 和 s同时相关，所以先 yy 出一种做法按 每头牛的w + s进行升序排序(题见多了可能就会有这种题感)。接下来进行数学分析证明: 牛 交换前 交换后 $i$ \sum_\{j=1}^\{i-1} w_j - s_i \sum_\{j=1}^\{i-1} w_j + w_\{i+1}- s_i $i + 1$ \sum_\{j=1}^\{i} w_j - s_\{i+1} \sum_\{j=1}^\{i-1} w_j - s_\{i+1} 其他牛的危险值显然不变，所以分析交换前后这两头牛中最大的危险值即可。将上述式子进行化简，每个式子减去 $\sum_\{j=1}^\{i-1} w_j$得到如下式子 牛 交换前 交换后 $ i $ -s_i w_\{i+1}- s_i $ i + 1 $ w_i- s_\{i+1} - s_\{i+1} 由于s, w都是正数，$ w_i- s_\{i+1} &gt; - s_\{i+1}$ , $w_\{i+1}- s_i &gt; -s_i$ 比较$ w_i- s_\{i+1}$, $w_\{i+1}- s_i$即可 当$ w_i- s_\{i+1} &gt;= w_\{i+1}- s_i$，即 $w_i + s_i &gt;= w_\{i+1} + s_\{i+1}$时, 交换后更优 当$ w_i- s_\{i+1} &lt; w_\{i+1}- s_i$，即 $w_i + s_i &lt; w_\{i+1} + s_\{i+1}$时, 交换前更优 所以得到做法: 按每头牛的 w + s 进行排序, 当存在逆序时就进行交换(即升序排序)，然后根据题意算出每头牛的危险值记录其中的最大值即可 代码:1234567891011121314151617181920212223242526272829#include &lt;iostream&gt;#include &lt;algorithm&gt;using namespace std;typedef long long ll;typedef pair&lt;int, int&gt; PII;const int N = 5e4 + 5;PII a[N];int main()&#123; int n; cin &gt;&gt; n; for(int i = 0; i &lt; n; i ++ ) &#123; int x, y; scanf("%d %d", &amp;x, &amp;y); a[i].first = x + y; a[i].second = y; &#125; sort(a, a + n); ll res = -1e18, sum = 0; for(int i = 0; i &lt; n; i ++ ) &#123; sum -= a[i].second; res = max(res, sum); sum += a[i].first; &#125; cout &lt;&lt; res &lt;&lt; endl; return 0;&#125;]]></content>
+      <categories>
+        <category>算法竞赛进阶指南</category>
+      </categories>
+      <tags>
+        <tag>贪心</tag>
+      </tags>
+  </entry>
+</search>
