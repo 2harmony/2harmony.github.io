@@ -1640,6 +1640,13 @@ pre .javascript .function {
 .rtl.post-title {
   font-family: UKIJ Ekran;
 }
+.post-body p a {
+  color: #345;
+  border-bottom: none;
+}
+.post-body p a:hover {
+  color: #8080ff;
+}
 .sidebar {
   position: fixed;
   right: 0;
@@ -1730,7 +1737,12 @@ pre .javascript .function {
   max-width: 120px;
   height: auto;
   border: 1px solid #eee;
+  border-radius: 50%;
+  transition: 2s all;
   opacity: 1;
+}
+.site-author-image:hover {
+  transform: rotate(360deg);
 }
 .site-author-name {
   margin: 0;
@@ -1765,7 +1777,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff816a;
+  background: #ff171f;
 }
 .feed-link,
 .chat {
