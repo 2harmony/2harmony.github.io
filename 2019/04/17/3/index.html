@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="一级二级三级** 列表1 列表2  a 子列表  b 子列表 列表3百度字体是线的哦字体是加粗了的 &amp;lt;html&amp;gt;&amp;lt;/html&amp;gt; 1#include    内容是引用的   $sum$ 12345678910111213141516171819# 一级## 二级### 三级***---***----------- 列表1- 列表2	a 子列表	b 子列表- 列表3  [百度]">
+  <meta name="description" content="思想以当前这个数下标i为标准，遍历前面(0 ~ i - 1)的数，如果大于a[i]则逆序对数 + 1，然后运用桶排序的思想，用a[j]的值作为下标，出现则记录为 1，运用树状数组维护前a[i]个数的和然后用 i - sum(a[i]) 即得到前i个数中本应该小于却没有小的数(即逆序对数)  123456789101112131415161718192021222324252627282930313">
+<meta name="keywords" content="树状数组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="示范">
-<meta property="og:url" content="http://yoursite.com/2019/04/16/index/index.html">
+<meta property="og:title" content="树状数组求逆序对">
+<meta property="og:url" content="http://yoursite.com/2019/04/17/3/index.html">
 <meta property="og:site_name" content="2harmony">
-<meta property="og:description" content="一级二级三级** 列表1 列表2  a 子列表  b 子列表 列表3百度字体是线的哦字体是加粗了的 &amp;lt;html&amp;gt;&amp;lt;/html&amp;gt; 1#include    内容是引用的   $sum$ 12345678910111213141516171819# 一级## 二级### 三级***---***----------- 列表1- 列表2	a 子列表	b 子列表- 列表3  [百度]">
+<meta property="og:description" content="思想以当前这个数下标i为标准，遍历前面(0 ~ i - 1)的数，如果大于a[i]则逆序对数 + 1，然后运用桶排序的思想，用a[j]的值作为下标，出现则记录为 1，运用树状数组维护前a[i]个数的和然后用 i - sum(a[i]) 即得到前i个数中本应该小于却没有小的数(即逆序对数)  123456789101112131415161718192021222324252627282930313">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-16T15:08:48.273Z">
+<meta property="og:updated_time" content="2019-04-17T04:33:08.022Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="示范">
-<meta name="twitter:description" content="一级二级三级** 列表1 列表2  a 子列表  b 子列表 列表3百度字体是线的哦字体是加粗了的 &amp;lt;html&amp;gt;&amp;lt;/html&amp;gt; 1#include    内容是引用的   $sum$ 12345678910111213141516171819# 一级## 二级### 三级***---***----------- 列表1- 列表2	a 子列表	b 子列表- 列表3  [百度]">
+<meta name="twitter:title" content="树状数组求逆序对">
+<meta name="twitter:description" content="思想以当前这个数下标i为标准，遍历前面(0 ~ i - 1)的数，如果大于a[i]则逆序对数 + 1，然后运用桶排序的思想，用a[j]的值作为下标，出现则记录为 1，运用树状数组维护前a[i]个数的和然后用 i - sum(a[i]) 即得到前i个数中本应该小于却没有小的数(即逆序对数)  123456789101112131415161718192021222324252627282930313">
 
 
 
@@ -114,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/04/16/index/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/17/3/">
 
 
 
@@ -124,7 +125,7 @@
   };
 </script>
 
-  <title>示范 | 2harmony</title>
+  <title>树状数组求逆序对 | 2harmony</title>
   
 
 
@@ -370,7 +371,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/16/index/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/17/3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lzy">
@@ -387,7 +388,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">示范
+          <h1 class="post-title" itemprop="name headline">树状数组求逆序对
 
               
             
@@ -413,7 +414,7 @@
                 
               
 
-              <time title="创建时间：2019-04-16 20:06:48 / 修改时间：23:08:48" itemprop="dateCreated datePublished" datetime="2019-04-16T20:06:48+08:00">2019-04-16</time>
+              <time title="创建时间：2019-04-17 20:06:48 / 修改时间：12:33:08" itemprop="dateCreated datePublished" datetime="2019-04-17T20:06:48+08:00">2019-04-17</time>
             
 
             
@@ -423,6 +424,24 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/模板/" itemprop="url" rel="index"><span itemprop="name">模板</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -452,21 +471,8 @@
       
 
       
-        <h1 id="一级"><a href="#一级" class="headerlink" title="一级"></a>一级</h1><h2 id="二级"><a href="#二级" class="headerlink" title="二级"></a>二级</h2><h3 id="三级"><a href="#三级" class="headerlink" title="三级"></a>三级</h3><h2 id><a href="#" class="headerlink" title="*"></a><em>*</em></h2><h2 id="-1"><a href="#-1" class="headerlink" title="*"></a><em>*</em></h2><ul>
-<li>列表1</li>
-<li>列表2<br>  a 子列表<br>  b 子列表</li>
-<li><p>列表3<br><a href="https://www.baidu.com" target="_blank" rel="noopener">百度</a><br><img src alt="新客站"><br><em>字体是线的哦</em><br><strong>字体是加粗了的</strong></p>
-<p><code>&lt;html&gt;&lt;/html&gt;</code></p>
-<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span></span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>内容是引用的 </p>
-</blockquote>
-<p>$sum$</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 一级</span></span><br><span class="line"><span class="section">## 二级</span></span><br><span class="line"><span class="section">### 三级</span></span><br><span class="line"></span><br><span class="line"><span class="emphasis">***</span></span><br><span class="line">---</span><br><span class="line"><span class="emphasis">***</span></span><br><span class="line">----------</span><br><span class="line"><span class="bullet">- </span>列表1</span><br><span class="line"><span class="bullet">- </span>列表2</span><br><span class="line"><span class="code">	a 子列表</span></span><br><span class="line"><span class="code">	b 子列表</span></span><br><span class="line"><span class="bullet">- </span>列表3</span><br><span class="line">  [<span class="string">百度</span>](<span class="link">https://www.baidu.com</span>)</span><br><span class="line">  ![<span class="string">新客站</span>](<span class="link"></span>)</span><br><span class="line">  <span class="emphasis">*字体是线的哦*</span></span><br><span class="line">  <span class="strong">**字体是加粗了的**</span></span><br><span class="line">  </span><br><span class="line">  <span class="code">`&lt;html&gt;&lt;/html&gt;`</span></span><br></pre></td></tr></table></figure>
-<pre><code>#include
-</code></pre>  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="quote">&gt; 内容是引用的</span></span><br></pre></td></tr></table></figure>
+        <h3 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h3><p>以当前这个数下标i为标准，遍历前面(0 ~ i - 1)的数，如果大于a[i]则逆序对数 + 1，<br>然后运用桶排序的思想，用a[j]的值作为下标，出现则记录为 1，运用树状数组维护前a[i]个数的和<br>然后用 i - sum(a[i]) 即得到前i个数中本应该小于却没有小的数(即逆序对数) </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lowbit(x) (x &amp; -x)			<span class="comment">//lowbit() 运算，取当前第一个 1 出现的位置 </span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">4</span>;</span><br><span class="line"><span class="keyword">int</span> bit[N];			<span class="comment">//bit数组，用二进制思想维护和</span></span><br><span class="line"><span class="keyword">int</span> n, a[N];		<span class="comment">//a数组可有可无，bit的创建通过add(location, value)来确定</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> i)</span>			<span class="comment">//取和操作 </span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> s = <span class="number">0</span>;			<span class="comment">//得到前i个元素的和 </span></span><br><span class="line">		 		<span class="comment">//例 : 6 二进制 110, 第一次为自己本身即 	s += bit[6]</span></span><br><span class="line">					<span class="comment">//第二次减去从右往左的第一个1 变为 100 即为4 s += bit[4]</span></span><br><span class="line">				<span class="comment">//第三次再减去1变为 0 退出  即先使用值再减去第一个 1 </span></span><br><span class="line">	<span class="keyword">for</span>( ; i ; i -= lowbit(i))	</span><br><span class="line">		s += bit[i];</span><br><span class="line">	<span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> x)</span>			<span class="comment">//i为位置，x为增量</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		<span class="comment">//与取和操作相反先对 i进行更新，然后加上第一个1之范围会包含原来这个区间，范围更大，都进行更新</span></span><br><span class="line">				<span class="comment">//区间最大边界要 &lt;= 最大长度 </span></span><br><span class="line">	</span><br><span class="line">     <span class="keyword">for</span>( ; i &lt;= n; i += lowbit(i) )		<span class="comment">//n为最大限制范围</span></span><br><span class="line">         bit[i] += x;	</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; a[i];		<span class="comment">//顺序输入 </span></span><br><span class="line">		add(a[i], <span class="number">1</span>);		 <span class="comment">//这个数值进行更新 </span></span><br><span class="line">		ans += i - sum(a[i]);		<span class="comment">//本应小于却没有小于数的个数即为逆序对个数 </span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -487,6 +493,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/树状数组/" rel="tag"># 树状数组</a>
+          
+        </div>
+      
 
       
       
@@ -496,8 +508,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/16/page/" rel="next" title="耍杂技的牛">
-                <i class="fa fa-chevron-left"></i> 耍杂技的牛
+              <a href="/2019/04/17/4/" rel="next" title="线段树模板">
+                <i class="fa fa-chevron-left"></i> 线段树模板
               </a>
             
           </div>
@@ -505,6 +517,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/18/5/" rel="prev" title="并查集模板">
+                并查集模板 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -575,7 +591,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -594,7 +610,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -613,7 +633,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -666,7 +696,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一级"><span class="nav-number">1.</span> <span class="nav-text">一级</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二级"><span class="nav-number">1.1.</span> <span class="nav-text">二级</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三级"><span class="nav-number">1.1.1.</span> <span class="nav-text">三级</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.2.</span> <span class="nav-text">*</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-1"><span class="nav-number">1.3.</span> <span class="nav-text">*</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#思想"><span class="nav-number">1.</span> <span class="nav-text">思想</span></a></li></ol></div>
             
 
           </div>
@@ -1164,6 +1194,13 @@
   
 
   
+  
+
+  
+  
+
+  
+
 
   
 

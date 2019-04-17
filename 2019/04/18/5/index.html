@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="农民约翰的N头奶牛（编号为1..N）计划逃跑并加入马戏团，为此它们决定练习表演杂技。 奶牛们不是非常有创意，只提出了一个杂技表演： 叠罗汉，表演时，奶牛们站在彼此的身上，形成一个高高的垂直堆叠。 奶牛们正在试图找到自己在这个堆叠中应该所处的位置顺序。 这N头奶牛中的每一头都有着自己的重量Wi以及自己的强壮程度Si。 一头牛只撑不住的可能性取决于它头上所有牛的总重量（不包括它自己）减去它的身体强壮程">
-<meta name="keywords" content="贪心">
+  <meta name="description" content="标准(自改型和其一样，查询为O(1),  路径压缩 + 按秩合并) 12345678910111213141516171819202122232425262728293031const int MN = 50;int par[MN], heig[MN];void init(int n)		//初始化 每个点的根节点先初始化为自己，此时树的高度为0 &amp;#123;	for(int i = 0; i &amp;">
+<meta name="keywords" content="并查集">
 <meta property="og:type" content="article">
-<meta property="og:title" content="耍杂技的牛">
-<meta property="og:url" content="http://yoursite.com/2019/04/16/page/index.html">
+<meta property="og:title" content="并查集模板">
+<meta property="og:url" content="http://yoursite.com/2019/04/18/5/index.html">
 <meta property="og:site_name" content="2harmony">
-<meta property="og:description" content="农民约翰的N头奶牛（编号为1..N）计划逃跑并加入马戏团，为此它们决定练习表演杂技。 奶牛们不是非常有创意，只提出了一个杂技表演： 叠罗汉，表演时，奶牛们站在彼此的身上，形成一个高高的垂直堆叠。 奶牛们正在试图找到自己在这个堆叠中应该所处的位置顺序。 这N头奶牛中的每一头都有着自己的重量Wi以及自己的强壮程度Si。 一头牛只撑不住的可能性取决于它头上所有牛的总重量（不包括它自己）减去它的身体强壮程">
+<meta property="og:description" content="标准(自改型和其一样，查询为O(1),  路径压缩 + 按秩合并) 12345678910111213141516171819202122232425262728293031const int MN = 50;int par[MN], heig[MN];void init(int n)		//初始化 每个点的根节点先初始化为自己，此时树的高度为0 &amp;#123;	for(int i = 0; i &amp;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-16T12:15:56.708Z">
+<meta property="og:updated_time" content="2019-04-17T04:45:29.073Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="耍杂技的牛">
-<meta name="twitter:description" content="农民约翰的N头奶牛（编号为1..N）计划逃跑并加入马戏团，为此它们决定练习表演杂技。 奶牛们不是非常有创意，只提出了一个杂技表演： 叠罗汉，表演时，奶牛们站在彼此的身上，形成一个高高的垂直堆叠。 奶牛们正在试图找到自己在这个堆叠中应该所处的位置顺序。 这N头奶牛中的每一头都有着自己的重量Wi以及自己的强壮程度Si。 一头牛只撑不住的可能性取决于它头上所有牛的总重量（不包括它自己）减去它的身体强壮程">
+<meta name="twitter:title" content="并查集模板">
+<meta name="twitter:description" content="标准(自改型和其一样，查询为O(1),  路径压缩 + 按秩合并) 12345678910111213141516171819202122232425262728293031const int MN = 50;int par[MN], heig[MN];void init(int n)		//初始化 每个点的根节点先初始化为自己，此时树的高度为0 &amp;#123;	for(int i = 0; i &amp;">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/04/16/page/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/18/5/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>耍杂技的牛 | 2harmony</title>
+  <title>并查集模板 | 2harmony</title>
   
 
 
@@ -371,7 +371,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/16/page/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/18/5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lzy">
@@ -388,7 +388,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">耍杂技的牛
+          <h1 class="post-title" itemprop="name headline">并查集模板
 
               
             
@@ -414,34 +414,28 @@
                 
               
 
-              <time title="创建时间：2019-04-16 14:51:32 / 修改时间：20:15:56" itemprop="dateCreated datePublished" datetime="2019-04-16T14:51:32+08:00">2019-04-16</time>
+              <time title="创建时间：2019-04-18 14:17:48" itemprop="dateCreated datePublished" datetime="2019-04-18T14:17:48+08:00">2019-04-18</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-17 12:45:29" itemprop="dateModified" datetime="2019-04-17T12:45:29+08:00">2019-04-17</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法竞赛进阶指南/" itemprop="url" rel="index"><span itemprop="name">算法竞赛进阶指南</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -471,74 +465,11 @@
       
 
       
-        <p>农民约翰的N头奶牛（编号为1..N）计划逃跑并加入马戏团，为此它们决定练习表演杂技。</p>
-<p>奶牛们不是非常有创意，只提出了一个杂技表演：</p>
-<p>叠罗汉，表演时，奶牛们站在彼此的身上，形成一个高高的垂直堆叠。</p>
-<p>奶牛们正在试图找到自己在这个堆叠中应该所处的位置顺序。</p>
-<p>这N头奶牛中的每一头都有着自己的重量Wi以及自己的强壮程度Si。</p>
-<p>一头牛只撑不住的可能性取决于它头上所有牛的总重量（不包括它自己）减去它的身体强壮程度的值，现在称该数值为风险值，风险值越大，这只牛撑不住的可能性越高。</p>
-<p>您的任务是确定奶牛的排序，使得所有奶牛的风险值中的最大值尽可能的小。</p>
-<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>第一行输入整数N，表示奶牛数量。</p>
-<p>接下来N行，每行输入两个整数，表示牛的重量和强壮程度，第i行表示第i头牛的重量Wi以及它的强壮程度Si。</p>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>输出一个整数，表示最大风险值的最小可能值。</p>
-<h3 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h3><p>1≤N≤50000,<br>1≤Wi≤10,000,<br>1≤Si≤1,000,000,000</p>
-<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span></span><br><span class="line"><span class="symbol">10 </span><span class="number">3</span></span><br><span class="line"><span class="symbol">2 </span><span class="number">5</span></span><br><span class="line"><span class="symbol">3 </span><span class="number">3</span></span><br></pre></td></tr></table></figure>
-<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-<h3 id="贪心"><a href="#贪心" class="headerlink" title="(贪心)"></a>(贪心)</h3><p>思路: 与国王游戏的贪心策略相似， 我们先分析每头牛的危险值 = 他前面牛的w(重量值)和 - 自身的s(强壮值)，要使每头牛的危险值最小，这显然是与w 和 s同时相关，所以先 yy 出一种做法按 每头牛的w + s进行升序排序(<del>题见多了可能就会有这种题感</del>)。接下来进行数学分析证明:</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>牛</th>
-<th style="text-align:right">交换前</th>
-<th style="text-align:center">交换后</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$i$</td>
-<td style="text-align:right"><script type="math/tex">\sum_\{j=1}^\{i-1} w_j - s_i</script></td>
-<td style="text-align:center"><script type="math/tex">\sum_\{j=1}^\{i-1} w_j + w_\{i+1}- s_i</script></td>
-</tr>
-<tr>
-<td>$i + 1$</td>
-<td style="text-align:right"><script type="math/tex">\sum_\{j=1}^\{i} w_j - s_\{i+1}</script></td>
-<td style="text-align:center"><script type="math/tex">\sum_\{j=1}^\{i-1} w_j - s_\{i+1}</script></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>其他牛的危险值显然不变，所以分析交换前后这两头牛中最大的危险值即可。<br>将上述式子进行化简，每个式子减去 $\sum_\{j=1}^\{i-1} w_j$得到如下式子</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>牛</th>
-<th style="text-align:right">交换前</th>
-<th style="text-align:center">交换后</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$ i $</td>
-<td style="text-align:right"><script type="math/tex">-s_i</script></td>
-<td style="text-align:center"><script type="math/tex">w_\{i+1}- s_i</script></td>
-</tr>
-<tr>
-<td>$ i + 1 $</td>
-<td style="text-align:right"><script type="math/tex">w_i- s_\{i+1}</script></td>
-<td style="text-align:center"><script type="math/tex">- s_\{i+1}</script></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>由于s, w都是正数，$ w_i- s_\{i+1}  &gt;  - s_\{i+1}$ ,  $w_\{i+1}- s_i &gt; -s_i$</p>
-<p>比较$ w_i- s_\{i+1}$, $w_\{i+1}- s_i$即可</p>
-<p>当$ w_i- s_\{i+1}  &gt;=  w_\{i+1}- s_i$，即 $w_i + s_i &gt;= w_\{i+1} + s_\{i+1}$时, 交换后更优</p>
-<p>当$ w_i- s_\{i+1}  &lt;  w_\{i+1}- s_i$，即 $w_i + s_i &lt; w_\{i+1} + s_\{i+1}$时, 交换前更优</p>
-<p>所以得到做法: 按每头牛的 w + s 进行排序, 当存在逆序时就进行交换(即升序排序)，<br>然后根据题意算出每头牛的危险值记录其中的最大值即可</p>
-<p>代码:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; PII;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">5e4</span> + <span class="number">5</span>;</span><br><span class="line">PII a[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x, y;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;x, &amp;y);</span><br><span class="line">        a[i].first = x + y;</span><br><span class="line">        a[i].second = y;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(a, a + n);</span><br><span class="line">    ll res = <span class="number">-1e18</span>, sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        sum -= a[i].second;</span><br><span class="line">        res = max(res, sum);</span><br><span class="line">        sum += a[i].first;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+        <h3 id="标准"><a href="#标准" class="headerlink" title="标准"></a>标准</h3><p>(自改型和其一样，查询为O(1),  路径压缩 + 按秩合并)</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MN = <span class="number">50</span>;</span><br><span class="line"><span class="keyword">int</span> par[MN], heig[MN];</span><br><span class="line"><span class="keyword">void</span> init(<span class="keyword">int</span> n)		<span class="comment">//初始化 每个点的根节点先初始化为自己，此时树的高度为0 </span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)			</span><br><span class="line">		par[i] = i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> <span class="built_in">find</span>(<span class="keyword">int</span> x)			<span class="comment">//查找根节点 </span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">if</span>(par[x] == x)	<span class="built_in">return</span> x;		<span class="comment">//如果找到根节点直接返回（刚开始根节点都初始化为本身） </span></span><br><span class="line">	<span class="built_in">return</span> par[x] = <span class="built_in">find</span>(par[x]);				<span class="comment">//递归的进行寻找，从父节点一个一个往上找 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> unite(<span class="keyword">int</span> x, <span class="keyword">int</span> y)		<span class="comment">//合并 </span></span><br><span class="line">&#123;</span><br><span class="line">	x = <span class="built_in">find</span>(x);			<span class="comment">//由于函数里是备份不会改变原有值直接操作 </span></span><br><span class="line">	y = <span class="built_in">find</span>(y);	<span class="comment">//找到x，y的根节点 </span></span><br><span class="line">	<span class="built_in">if</span>(x == y)	<span class="built_in">return</span>;			<span class="comment">//如果x，y的根节点相同则不用合并 </span></span><br><span class="line">	<span class="built_in">if</span>(heig[x] &lt; heig[y])			<span class="comment">//如果y的深度大于x的深度，x接到y上(出于树防树退化的考虑) </span></span><br><span class="line">		par[x] = y;							<span class="comment">//x的根节点变为y的 </span></span><br><span class="line">	<span class="built_in">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		par[y] = x;		  <span class="comment">//否则y接x上 </span></span><br><span class="line">		<span class="built_in">if</span>(heig[x] == heig[y])	heig[x] ++;		<span class="comment">//如果出现深度相同的情况，那么x的深度+1(深度相等情况的处理) </span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">bool</span> same(<span class="keyword">int</span> x, <span class="keyword">int</span> y)				<span class="comment">//查找是否为同一个根节点 </span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">return</span> <span class="built_in">find</span>(x) == <span class="built_in">find</span>(y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="自改型"><a href="#自改型" class="headerlink" title="自改型"></a>自改型</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = </span><br><span class="line">par[N], heig[N];</span><br><span class="line"><span class="keyword">void</span> init()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)</span><br><span class="line">        par[i] = i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> <span class="built_in">find</span>(<span class="keyword">int</span> x)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">if</span>(par[x] == x)</span><br><span class="line">        <span class="built_in">return</span> x;</span><br><span class="line">    <span class="built_in">return</span> par[x] = <span class="built_in">find</span>(par[x]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> unite(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span><br><span class="line">&#123;</span><br><span class="line">    x = <span class="built_in">find</span>(x), y = <span class="built_in">find</span>(y);</span><br><span class="line">    <span class="built_in">if</span>(x == y)  <span class="built_in">return</span>;</span><br><span class="line">    <span class="built_in">if</span>(heig[x] &gt; heig[y])   par[y] = x;</span><br><span class="line">    <span class="built_in">else</span> <span class="built_in">if</span>(heig[x] == heig[y])   par[y] = x, heig[x] ++;</span><br><span class="line">    <span class="built_in">else</span>    par[x] = y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> same(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="built_in">find</span>(x) == <span class="built_in">find</span> (y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="并查集-lyd版"><a href="#并查集-lyd版" class="headerlink" title="并查集 lyd版"></a>并查集 lyd版</h3><p>(查询logn，只用了路径压缩）</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)		a[i] = i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span>(<span class="params"><span class="keyword">int</span> x</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x == f[x] ? x : f[x] = <span class="keyword">get</span>(f[x]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span>(<span class="params"><span class="keyword">int</span> x, <span class="keyword">int</span> y</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	f[<span class="keyword">get</span>(x)] = <span class="keyword">get</span>(y);			<span class="comment">//直接将x的根节点连在y的根节点上</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">same</span>(<span class="params"><span class="keyword">int</span> x, <span class="keyword">int</span> y</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">get</span>(x) == <span class="keyword">get</span>(y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -561,7 +492,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/贪心/" rel="tag"># 贪心</a>
+            <a href="/tags/并查集/" rel="tag"># 并查集</a>
           
         </div>
       
@@ -574,14 +505,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/04/17/3/" rel="next" title="树状数组求逆序对">
+                <i class="fa fa-chevron-left"></i> 树状数组求逆序对
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/16/index/" rel="prev" title="示范">
-                示范 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/18/6/" rel="prev" title="离散化模板">
+                离散化模板 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -653,7 +588,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -672,7 +607,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -691,7 +630,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -744,7 +693,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式"><span class="nav-number">1.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式"><span class="nav-number">2.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据范围"><span class="nav-number">3.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入样例："><span class="nav-number">4.</span> <span class="nav-text">输入样例：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出样例："><span class="nav-number">5.</span> <span class="nav-text">输出样例：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贪心"><span class="nav-number">6.</span> <span class="nav-text">(贪心)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#标准"><span class="nav-number">1.</span> <span class="nav-text">标准</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自改型"><span class="nav-number">2.</span> <span class="nav-text">自改型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#并查集-lyd版"><span class="nav-number">3.</span> <span class="nav-text">并查集 lyd版</span></a></li></ol></div>
             
 
           </div>
@@ -1242,6 +1191,13 @@
   
 
   
+  
+
+  
+  
+
+  
+
 
   
 
