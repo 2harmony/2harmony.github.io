@@ -96,18 +96,20 @@
 
 
 
-  <meta name="description" content="思想动态规划，dp[i]表示选i作为序列的结尾 状态转移:1.首先选则i作为结尾则 a[i] 必选2.如果dp[i - 1]的 sum 即(dp[i - 1].dat) &amp;lt; 0, 则不选前一段序列，单独以a[i]作为序列方程 ： dp[i] = max(dp[i - 1] + a[i], a[i])本题新增问题: 求出最优序列的左右区间下标运用结构体数组 (由于题设要求最小的l，r下标，则当">
+  <meta name="description" content="HDU - 1231 (一维)给定K个整数的序列{ N1, N2, …, NK }，其任意连续子序列可表示为{ Ni, Ni+1, …,Nj }，其中 1 &amp;lt;= i &amp;lt;= j &amp;lt;= K。最大连续子序列是所有连续子序列中元素和最大的一个，例如给定序列{ -2, 11, -4, 13, -5, -2 }，其最大连续子序列为{ 11, -4, 13 }，最大和为20。在今年的数据结构考">
 <meta name="keywords" content="dp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最大连续子序列 HDU - 1231">
+<meta property="og:title" content="最大连续子序列">
 <meta property="og:url" content="http://yoursite.com/2019/04/19/11/index.html">
 <meta property="og:site_name" content="2harmony">
-<meta property="og:description" content="思想动态规划，dp[i]表示选i作为序列的结尾 状态转移:1.首先选则i作为结尾则 a[i] 必选2.如果dp[i - 1]的 sum 即(dp[i - 1].dat) &amp;lt; 0, 则不选前一段序列，单独以a[i]作为序列方程 ： dp[i] = max(dp[i - 1] + a[i], a[i])本题新增问题: 求出最优序列的左右区间下标运用结构体数组 (由于题设要求最小的l，r下标，则当">
+<meta property="og:description" content="HDU - 1231 (一维)给定K个整数的序列{ N1, N2, …, NK }，其任意连续子序列可表示为{ Ni, Ni+1, …,Nj }，其中 1 &amp;lt;= i &amp;lt;= j &amp;lt;= K。最大连续子序列是所有连续子序列中元素和最大的一个，例如给定序列{ -2, 11, -4, 13, -5, -2 }，其最大连续子序列为{ 11, -4, 13 }，最大和为20。在今年的数据结构考">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-18T03:30:22.680Z">
+<meta property="og:image" content="https://i.postimg.cc/fbcZJw51/1.jpg">
+<meta property="og:updated_time" content="2019-04-18T14:29:00.741Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="最大连续子序列 HDU - 1231">
-<meta name="twitter:description" content="思想动态规划，dp[i]表示选i作为序列的结尾 状态转移:1.首先选则i作为结尾则 a[i] 必选2.如果dp[i - 1]的 sum 即(dp[i - 1].dat) &amp;lt; 0, 则不选前一段序列，单独以a[i]作为序列方程 ： dp[i] = max(dp[i - 1] + a[i], a[i])本题新增问题: 求出最优序列的左右区间下标运用结构体数组 (由于题设要求最小的l，r下标，则当">
+<meta name="twitter:title" content="最大连续子序列">
+<meta name="twitter:description" content="HDU - 1231 (一维)给定K个整数的序列{ N1, N2, …, NK }，其任意连续子序列可表示为{ Ni, Ni+1, …,Nj }，其中 1 &amp;lt;= i &amp;lt;= j &amp;lt;= K。最大连续子序列是所有连续子序列中元素和最大的一个，例如给定序列{ -2, 11, -4, 13, -5, -2 }，其最大连续子序列为{ 11, -4, 13 }，最大和为20。在今年的数据结构考">
+<meta name="twitter:image" content="https://i.postimg.cc/fbcZJw51/1.jpg">
 
 
 
@@ -125,7 +127,7 @@
   };
 </script>
 
-  <title>最大连续子序列 HDU - 1231 | 2harmony</title>
+  <title>最大连续子序列 | 2harmony</title>
   
 
 
@@ -388,7 +390,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">最大连续子序列 HDU - 1231
+          <h1 class="post-title" itemprop="name headline">最大连续子序列
 
               
             
@@ -431,7 +433,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-18 11:30:22" itemprop="dateModified" datetime="2019-04-18T11:30:22+08:00">2019-04-18</time>
+                <time title="修改时间：2019-04-18 22:29:00" itemprop="dateModified" datetime="2019-04-18T22:29:00+08:00">2019-04-18</time>
               
             
           </span>
@@ -483,11 +485,28 @@
       
 
       
-        <h3 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h3><p><strong>动态规划</strong>，dp[i]表示选i作为序列的结尾</p>
+        <h2 id="HDU-1231-一维"><a href="#HDU-1231-一维" class="headerlink" title="HDU - 1231 (一维)"></a>HDU - 1231 (一维)</h2><p>给定K个整数的序列{ N1, N2, …, NK }，其任意连续子序列可表示为{ Ni, Ni+1, …,<br>Nj }，其中 1 &lt;= i &lt;= j &lt;= K。最大连续子序列是所有连续子序列中元素和最大的一个，<br>例如给定序列{ -2, 11, -4, 13, -5, -2 }，其最大连续子序列为{ 11, -4, 13 }，最大和<br>为20。<br>在今年的数据结构考卷中，要求编写程序得到最大和，现在增加一个要求，即还需要输出该<br>子序列的第一个和最后一个元素。 </p>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>测试输入包含若干测试用例，每个测试用例占2行，第1行给出正整数K( &lt; 10000 )，<br>第2行给出K个整数，中间用空格分隔。当K为0时，输入结束，该用例不被处理。 </p>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>对每个测试用例，在1行里输出最大和、最大连续子序列的第一个和最后一个元<br>素，中间用空格分隔。如果最大连续子序列不唯一，则输出序号i和j最小的那个（如输入样例的第2、3组）。<br>若所有K个元素都是负数，则定义其最大和为0，输出整个序列的首尾元素。 </p>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">-2</span> <span class="number">11</span> <span class="number">-4</span> <span class="number">13</span> <span class="number">-5</span> <span class="number">-2</span></span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="number">-10</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">-5</span> <span class="number">-23</span> <span class="number">3</span> <span class="number">7</span> <span class="number">-21</span></span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">5</span> <span class="number">-8</span> <span class="number">3</span> <span class="number">2</span> <span class="number">5</span> <span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">-1</span> <span class="number">-5</span> <span class="number">-2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">-1</span> <span class="number">0</span> <span class="number">-2</span></span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">20 </span><span class="number">11</span> <span class="number">13</span></span><br><span class="line"><span class="symbol">10 </span><span class="number">1</span> <span class="number">4</span></span><br><span class="line"><span class="symbol">10 </span><span class="number">3</span> <span class="number">5</span></span><br><span class="line"><span class="symbol">10 </span><span class="number">10</span> <span class="number">10</span></span><br><span class="line"><span class="symbol">0 </span>-<span class="number">1</span> -<span class="number">2</span></span><br><span class="line"><span class="symbol">0 </span><span class="number">0</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p><em>Huge input, scanf is recommended.</em></p>
+<h3 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h3><p><strong>动态规划</strong>，dp[i]表示选i作为序列的结尾</p>
 <h3 id="状态转移"><a href="#状态转移" class="headerlink" title="状态转移:"></a>状态转移:</h3><p>1.首先选则i作为结尾则 a[i] 必选<br>2.如果dp[i - 1]的 sum 即(dp[i - 1].dat) &lt; 0, 则不选前一段序列，单独以a[i]作为序列<br>方程 ： dp[i] = max(dp[i - 1] + a[i], a[i])<br>本题新增问题: 求出最优序列的左右区间下标<br>运用结构体数组</p>
 <p>(由于题设要求最小的l，r下标，则当dp[i - 1] == 0 true时，要进行l，r的更新)<br>由于必选a[i], 则下标r必定赋值为 dp[i - 1].dat = i;<br>1.如果选择前一个序列，则l由dp[i - 1].l转移过来<br>2.如果不选择前一个序列，则l更新为当前下标 dp[i - 1].l = i </p>
 <hr>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e4</span> + <span class="number">5</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> dat, l, r;		<span class="comment">// 和值，序列左右区间 </span></span><br><span class="line">&#125;dp[N];</span><br><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n, l, r;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n &amp;&amp; n)</span><br><span class="line">	&#123;</span><br><span class="line">		dp[<span class="number">0</span>].dat = <span class="number">0</span>;				<span class="comment">// 边界情况处理 </span></span><br><span class="line">		dp[<span class="number">0</span>].l = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">		&#123; </span><br><span class="line">			dp[i].dat = a[i];	 <span class="comment">//由于必选a[i]，则值刚开始必有a[i]右区间必为 i  </span></span><br><span class="line">			dp[i].r = i; </span><br><span class="line">			<span class="keyword">if</span>(dp[i - <span class="number">1</span>].dat &gt;= <span class="number">0</span>)		<span class="comment">//选前一个序列 </span></span><br><span class="line">			&#123;</span><br><span class="line">				dp[i].dat += dp[i - <span class="number">1</span>].dat;		<span class="comment">//值加上前一个 </span></span><br><span class="line">				dp[i].l = dp[i - <span class="number">1</span>].l;		<span class="comment">//l由前一个序列转移过来 </span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				dp[i].l = i;			<span class="comment">//不选以自己下标作为 左区间 </span></span><br><span class="line">		&#125;</span><br><span class="line">		node ans;</span><br><span class="line">		ans.dat = <span class="number">-0x3f3f3f3f</span>;				<span class="comment">//遍历所有找出答案 </span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">			<span class="keyword">if</span>(ans.dat &lt; dp[i].dat)</span><br><span class="line">			&#123;</span><br><span class="line">				ans = dp[i];</span><br><span class="line">			&#125;</span><br><span class="line">		<span class="keyword">if</span>(ans.dat &lt; <span class="number">0</span>)				<span class="comment">//答案为负，则说明全序列都为负，按题设要求输出，0 和 第一个 ，最后一个区间 </span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"0 %d %d\n"</span>, a[<span class="number">1</span>], a[n]);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d %d %d\n"</span>, ans.dat, a[ans.l], a[ans.r]);			<span class="comment">//输出答案 </span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="最大子矩阵-二维"><a href="#最大子矩阵-二维" class="headerlink" title="最大子矩阵(二维)"></a>最大子矩阵(二维)</h2><p>给定一个边长为n * m的矩阵，求其中的子矩阵</p>
+<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><hr>
+<p>4 4<br>0 -2 -7 0<br>9 2 -6 2<br>-4 1 -4 1<br>-1 8 0 -2</p>
+<hr>
+<p>最大子阵为:</p>
+<p>9 2<br>-4 1<br>-1 8</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">15</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h3><p><strong>暴力枚举 + 前缀和处理</strong><br>时间复杂度: $O(n^4)$<br>1.先用二维前缀和处理从(0,0) 到(i, j)所构成的矩阵<br>2.每个子矩阵求法<br>如下图:<br><a href="https://postimg.cc/p9L3SMwB" target="_blank" rel="noopener"><img src="https://i.postimg.cc/fbcZJw51/1.jpg" alt="1.jpg"></a><br>$$S = S(i,j) - S(k - 1,j) - S(i, l - 1) + S(k - 1, l - 1)$$<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">105</span>;</span><br><span class="line"><span class="keyword">int</span> a[N][N];</span><br><span class="line"><span class="keyword">int</span> b[N][N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m, ans = <span class="number">-1e8</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line"> 	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j ++ )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][j]);</span><br><span class="line">            b[i + <span class="number">1</span>][j + <span class="number">1</span>] = a[i][j] + b[i][j + <span class="number">1</span>] + b[i + <span class="number">1</span>][j] - b[i][j];  <span class="comment">//下标从0开始对应 + 1</span></span><br><span class="line">        &#125;</span><br><span class="line">	<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j ++ )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt;= i; k ++ )</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> l = <span class="number">0</span>; l &lt;= j; l ++ )</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">int</span> sum = b[i + <span class="number">1</span>][j + <span class="number">1</span>] - b[k][j + <span class="number">1</span>] - b[i + <span class="number">1</span>][l] + b[k][l];</span><br><span class="line">        			ans = max(ans, sum);</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h3><p><strong>动态规划</strong> $O(n^3)$<br>把每一列压为一行，然后用二重循环枚举开头结尾(用前缀和快速求得每次压缩后的一维数组)<br>转化为一维数组问题后，d[i] = max(a[i] + d[i - 1], a[i]), 每次算出值后用更新ans<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">55</span>;</span><br><span class="line"><span class="keyword">int</span> a[N][N];</span><br><span class="line"><span class="keyword">int</span> b[N][N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m, ans = <span class="number">-1e8</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line"> 	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j ++ )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i][j]);</span><br><span class="line">            b[i + <span class="number">1</span>][j + <span class="number">1</span>] = b[i][j + <span class="number">1</span>] + a[i][j];	<span class="comment">//列方向前缀和</span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ )		<span class="comment">//二重枚举列方向压缩的起点和终点</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; n; j ++ )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; m; k ++ )	<span class="comment">//一维问题</span></span><br><span class="line">            &#123;</span><br><span class="line">                sum += b[j + <span class="number">1</span>][k + <span class="number">1</span>] - b[i][k + <span class="number">1</span>];	</span><br><span class="line">                ans = max(ans, sum);</span><br><span class="line">                <span class="keyword">if</span>(sum &lt; <span class="number">0</span>)	sum = <span class="number">0</span>;			<span class="comment">//小于零则前段扔掉</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -534,7 +553,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/19/14/" rel="prev" title="N 皇后问题  HDU - 2553">
+              <a href="/2019/04/19/12/" rel="prev" title="N 皇后问题  HDU - 2553">
                 N 皇后问题  HDU - 2553 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -607,7 +626,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -732,7 +751,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#思想"><span class="nav-number">1.</span> <span class="nav-text">思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态转移"><span class="nav-number">2.</span> <span class="nav-text">状态转移:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HDU-1231-一维"><span class="nav-number">1.</span> <span class="nav-text">HDU - 1231 (一维)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Input"><span class="nav-number">1.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output"><span class="nav-number">1.2.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sample-Input"><span class="nav-number">1.3.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sample-Output"><span class="nav-number">1.4.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思想"><span class="nav-number">1.5.</span> <span class="nav-text">思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态转移"><span class="nav-number">1.6.</span> <span class="nav-text">状态转移:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最大子矩阵-二维"><span class="nav-number">2.</span> <span class="nav-text">最大子矩阵(二维)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#样例"><span class="nav-number">2.1.</span> <span class="nav-text">样例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">2.2.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路一"><span class="nav-number">2.3.</span> <span class="nav-text">思路一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路二"><span class="nav-number">2.4.</span> <span class="nav-text">思路二</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1235,6 +1254,46 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
