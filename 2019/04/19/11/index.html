@@ -96,14 +96,18 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+  <meta name="description" content="思想动态规划，dp[i]表示选i作为序列的结尾 状态转移:1.首先选则i作为结尾则 a[i] 必选2.如果dp[i - 1]的 sum 即(dp[i - 1].dat) &amp;lt; 0, 则不选前一段序列，单独以a[i]作为序列方程 ： dp[i] = max(dp[i - 1] + a[i], a[i])本题新增问题: 求出最优序列的左右区间下标运用结构体数组 (由于题设要求最小的l，r下标，则当">
+<meta name="keywords" content="dp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最大连续子序列 HDU - 1231">
+<meta property="og:url" content="http://yoursite.com/2019/04/19/11/index.html">
 <meta property="og:site_name" content="2harmony">
+<meta property="og:description" content="思想动态规划，dp[i]表示选i作为序列的结尾 状态转移:1.首先选则i作为结尾则 a[i] 必选2.如果dp[i - 1]的 sum 即(dp[i - 1].dat) &amp;lt; 0, 则不选前一段序列，单独以a[i]作为序列方程 ： dp[i] = max(dp[i - 1] + a[i], a[i])本题新增问题: 求出最优序列的左右区间下标运用结构体数组 (由于题设要求最小的l，r下标，则当">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-16T06:49:59.266Z">
+<meta property="og:updated_time" content="2019-04-18T03:30:22.680Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
+<meta name="twitter:title" content="最大连续子序列 HDU - 1231">
+<meta name="twitter:description" content="思想动态规划，dp[i]表示选i作为序列的结尾 状态转移:1.首先选则i作为结尾则 a[i] 必选2.如果dp[i - 1]的 sum 即(dp[i - 1].dat) &amp;lt; 0, 则不选前一段序列，单独以a[i]作为序列方程 ： dp[i] = max(dp[i - 1] + a[i], a[i])本题新增问题: 求出最优序列的左右区间下标运用结构体数组 (由于题设要求最小的l，r下标，则当">
 
 
 
@@ -111,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/tags/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/19/11/">
 
 
 
@@ -121,7 +125,7 @@
   };
 </script>
 
-  <title>标签 | 2harmony</title>
+  <title>最大连续子序列 HDU - 1231 | 2harmony</title>
   
 
 
@@ -242,7 +246,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -347,136 +351,207 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/19/11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lzy">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/author.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="2harmony">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">标签
-
-</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
+          <h1 class="post-title" itemprop="name headline">最大连续子序列 HDU - 1231
+
               
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-              目前共计 13 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              
-                <a href="/tags/bfs/" style="font-size: 12px; color: #ccc">bfs</a> <a href="/tags/dfs/" style="font-size: 30px; color: #111">dfs</a> <a href="/tags/dp/" style="font-size: 12px; color: #ccc">dp</a> <a href="/tags/公式语法/" style="font-size: 12px; color: #ccc">公式语法</a> <a href="/tags/并查集/" style="font-size: 12px; color: #ccc">并查集</a> <a href="/tags/最小生成树/" style="font-size: 12px; color: #ccc">最小生成树</a> <a href="/tags/最短路/" style="font-size: 12px; color: #ccc">最短路</a> <a href="/tags/树状数组/" style="font-size: 12px; color: #ccc">树状数组</a> <a href="/tags/模板/" style="font-size: 12px; color: #ccc">模板</a> <a href="/tags/离散化/" style="font-size: 12px; color: #ccc">离散化</a> <a href="/tags/线段树/" style="font-size: 12px; color: #ccc">线段树</a> <a href="/tags/贪心/" style="font-size: 12px; color: #ccc">贪心</a> <a href="/tags/高精度/" style="font-size: 12px; color: #ccc">高精度</a>
-              
-            </div>
-          </div>
+            
+          </h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-19 12:31:22" itemprop="dateCreated datePublished" datetime="2019-04-19T12:31:22+08:00">2019-04-19</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-18 11:30:22" itemprop="dateModified" datetime="2019-04-18T11:30:22+08:00">2019-04-18</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/HDU/" itemprop="url" rel="index"><span itemprop="name">HDU</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h3><p><strong>动态规划</strong>，dp[i]表示选i作为序列的结尾</p>
+<h3 id="状态转移"><a href="#状态转移" class="headerlink" title="状态转移:"></a>状态转移:</h3><p>1.首先选则i作为结尾则 a[i] 必选<br>2.如果dp[i - 1]的 sum 即(dp[i - 1].dat) &lt; 0, 则不选前一段序列，单独以a[i]作为序列<br>方程 ： dp[i] = max(dp[i - 1] + a[i], a[i])<br>本题新增问题: 求出最优序列的左右区间下标<br>运用结构体数组</p>
+<p>(由于题设要求最小的l，r下标，则当dp[i - 1] == 0 true时，要进行l，r的更新)<br>由于必选a[i], 则下标r必定赋值为 dp[i - 1].dat = i;<br>1.如果选择前一个序列，则l由dp[i - 1].l转移过来<br>2.如果不选择前一个序列，则l更新为当前下标 dp[i - 1].l = i </p>
+<hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e4</span> + <span class="number">5</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> dat, l, r;		<span class="comment">// 和值，序列左右区间 </span></span><br><span class="line">&#125;dp[N];</span><br><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n, l, r;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n &amp;&amp; n)</span><br><span class="line">	&#123;</span><br><span class="line">		dp[<span class="number">0</span>].dat = <span class="number">0</span>;				<span class="comment">// 边界情况处理 </span></span><br><span class="line">		dp[<span class="number">0</span>].l = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">		&#123; </span><br><span class="line">			dp[i].dat = a[i];	 <span class="comment">//由于必选a[i]，则值刚开始必有a[i]右区间必为 i  </span></span><br><span class="line">			dp[i].r = i; </span><br><span class="line">			<span class="keyword">if</span>(dp[i - <span class="number">1</span>].dat &gt;= <span class="number">0</span>)		<span class="comment">//选前一个序列 </span></span><br><span class="line">			&#123;</span><br><span class="line">				dp[i].dat += dp[i - <span class="number">1</span>].dat;		<span class="comment">//值加上前一个 </span></span><br><span class="line">				dp[i].l = dp[i - <span class="number">1</span>].l;		<span class="comment">//l由前一个序列转移过来 </span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				dp[i].l = i;			<span class="comment">//不选以自己下标作为 左区间 </span></span><br><span class="line">		&#125;</span><br><span class="line">		node ans;</span><br><span class="line">		ans.dat = <span class="number">-0x3f3f3f3f</span>;				<span class="comment">//遍历所有找出答案 </span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">			<span class="keyword">if</span>(ans.dat &lt; dp[i].dat)</span><br><span class="line">			&#123;</span><br><span class="line">				ans = dp[i];</span><br><span class="line">			&#125;</span><br><span class="line">		<span class="keyword">if</span>(ans.dat &lt; <span class="number">0</span>)				<span class="comment">//答案为负，则说明全序列都为负，按题设要求输出，0 和 第一个 ，最后一个区间 </span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"0 %d %d\n"</span>, a[<span class="number">1</span>], a[n]);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d %d %d\n"</span>, ans.dat, a[ans.l], a[ans.r]);			<span class="comment">//输出答案 </span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
-    
-
-
 
     
+
     
     
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/dp/" rel="tag"># dp</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/19/10/" rel="next" title="排序">
+                <i class="fa fa-chevron-left"></i> 排序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/19/14/" rel="prev" title="N 皇后问题  HDU - 2553">
+                N 皇后问题  HDU - 2553 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
@@ -505,8 +580,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -637,6 +721,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#思想"><span class="nav-number">1.</span> <span class="nav-text">思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态转移"><span class="nav-number">2.</span> <span class="nav-text">状态转移:</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
