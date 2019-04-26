@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="最小区间覆盖题意: 给定m个区间(左右端点)，求最少用多少个区间能覆盖1 - n思想 : 首先判断能否大于位置s，如果不能则直接false，然后进入更新阶段，直到当前的左端点大于s则退出ans ++; 所有的段判断完后(或者中途长度已经达到目标长度) 最后出来再进行一次判断，看是否能超过目标值n  12345678910111213141516171819202122232425262728293">
+  <meta name="description" content="最小区间覆盖题意: 给定m个区间(左右端点)，求最少用多少个区间能覆盖1 - n思想 :   将所有线段按左端点升序排序 另s = 0，用t进行备份，在左端点不超过的s + 1的前提下找到最远的右端点即while(l &amp;lt;= t + 1)        s = max(s, r); 更新完后判断if(s &amp;gt;= r)1234567891011121314151617181920212223">
 <meta name="keywords" content="贪心">
 <meta property="og:type" content="article">
 <meta property="og:title" content="区间贪心问题">
 <meta property="og:url" content="http://yoursite.com/2019/04/19/14/index.html">
 <meta property="og:site_name" content="2harmony">
-<meta property="og:description" content="最小区间覆盖题意: 给定m个区间(左右端点)，求最少用多少个区间能覆盖1 - n思想 : 首先判断能否大于位置s，如果不能则直接false，然后进入更新阶段，直到当前的左端点大于s则退出ans ++; 所有的段判断完后(或者中途长度已经达到目标长度) 最后出来再进行一次判断，看是否能超过目标值n  12345678910111213141516171819202122232425262728293">
+<meta property="og:description" content="最小区间覆盖题意: 给定m个区间(左右端点)，求最少用多少个区间能覆盖1 - n思想 :   将所有线段按左端点升序排序 另s = 0，用t进行备份，在左端点不超过的s + 1的前提下找到最远的右端点即while(l &amp;lt;= t + 1)        s = max(s, r); 更新完后判断if(s &amp;gt;= r)1234567891011121314151617181920212223">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-18T15:08:24.447Z">
+<meta property="og:updated_time" content="2019-04-20T02:06:38.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="区间贪心问题">
-<meta name="twitter:description" content="最小区间覆盖题意: 给定m个区间(左右端点)，求最少用多少个区间能覆盖1 - n思想 : 首先判断能否大于位置s，如果不能则直接false，然后进入更新阶段，直到当前的左端点大于s则退出ans ++; 所有的段判断完后(或者中途长度已经达到目标长度) 最后出来再进行一次判断，看是否能超过目标值n  12345678910111213141516171819202122232425262728293">
+<meta name="twitter:description" content="最小区间覆盖题意: 给定m个区间(左右端点)，求最少用多少个区间能覆盖1 - n思想 :   将所有线段按左端点升序排序 另s = 0，用t进行备份，在左端点不超过的s + 1的前提下找到最远的右端点即while(l &amp;lt;= t + 1)        s = max(s, r); 更新完后判断if(s &amp;gt;= r)1234567891011121314151617181920212223">
 
 
 
@@ -431,7 +431,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-18 23:08:24" itemprop="dateModified" datetime="2019-04-18T23:08:24+08:00">2019-04-18</time>
+                <time title="修改时间：2019-04-20 10:06:38" itemprop="dateModified" datetime="2019-04-20T10:06:38+08:00">2019-04-20</time>
               
             
           </span>
@@ -465,8 +465,13 @@
       
 
       
-        <h2 id="最小区间覆盖"><a href="#最小区间覆盖" class="headerlink" title="最小区间覆盖"></a>最小区间覆盖</h2><p>题意: 给定m个区间(左右端点)，求最少用多少个区间能覆盖1 - n<br>思想 : 首先判断能否大于位置s，如果不能则直接false，然后进入更新阶段，直到当前的左端点大于s则退出<br>ans ++; 所有的段判断完后(或者中途长度已经达到目标长度) 最后出来再进行一次判断，看是否能超过目标值n </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> l first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> r second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; PII;</span><br><span class="line">PII a[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i ++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;a[i].l, &amp;a[i].r);</span><br><span class="line">    sort(a, a + m);</span><br><span class="line">    <span class="keyword">int</span> s = <span class="number">0</span>, idx = <span class="number">0</span>, ans = <span class="number">0</span>, t;		</span><br><span class="line">    <span class="keyword">while</span>(s &lt; n &amp;&amp; idx &lt; m)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[idx].l &gt; s + <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">        	<span class="built_in">cout</span> &lt;&lt; <span class="string">"-1"</span>;</span><br><span class="line">        	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		t = s;		<span class="comment">//开始的位置需要备份， 直到左端点大于 t + 1时退出，这时t再进行更新 </span></span><br><span class="line">       	<span class="keyword">while</span>(a[idx].l &lt;= t + <span class="number">1</span> &amp;&amp; idx &lt; m)</span><br><span class="line">        &#123;   </span><br><span class="line">            s = max(s, a[idx].r);          <span class="comment">//得到可选择中的右边点的最远点 </span></span><br><span class="line">            idx ++;       </span><br><span class="line">		&#125;</span><br><span class="line">		ans ++;</span><br><span class="line">		t = s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(s == n)    <span class="built_in">cout</span> &lt;&lt; ans;		<span class="comment">//是否达到目标 </span></span><br><span class="line">    <span class="keyword">else</span>    <span class="built_in">cout</span> &lt;&lt; <span class="string">"-1"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="最小区间覆盖"><a href="#最小区间覆盖" class="headerlink" title="最小区间覆盖"></a>最小区间覆盖</h2><p>题意: 给定m个区间(左右端点)，求最少用多少个区间能覆盖1 - n<br>思想 : </p>
+<ul>
+<li>将所有线段按左端点升序排序</li>
+<li>另s = 0，用t进行备份，在左端点不超过的s + 1的前提下找到最远的右端点<br>即while(l &lt;= t + 1)        s = max(s, r);</li>
+<li>更新完后判断if(s &gt;= r)<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> l first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> r second</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; PII;</span><br><span class="line">PII a[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i ++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;a[i].l, &amp;a[i].r);</span><br><span class="line">    sort(a, a + m);</span><br><span class="line">    <span class="keyword">int</span> s = <span class="number">0</span>, idx = <span class="number">0</span>, ans = <span class="number">0</span>, t;		</span><br><span class="line">    <span class="keyword">while</span>(s &lt; n &amp;&amp; idx &lt; m)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[idx].l &gt; s + <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">        	<span class="built_in">cout</span> &lt;&lt; <span class="string">"-1"</span>;</span><br><span class="line">        	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		t = s;		<span class="comment">//开始的位置需要备份， 直到左端点大于 t + 1时退出，这时t再进行更新 </span></span><br><span class="line">       	<span class="keyword">while</span>(a[idx].l &lt;= t + <span class="number">1</span> &amp;&amp; idx &lt; m)</span><br><span class="line">        &#123;   </span><br><span class="line">            s = max(s, a[idx].r);          <span class="comment">//得到可选择中的右边点的最远点 </span></span><br><span class="line">            idx ++;       </span><br><span class="line">		&#125;</span><br><span class="line">		ans ++;</span><br><span class="line">		t = s;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(s == n)    <span class="built_in">cout</span> &lt;&lt; ans;		<span class="comment">//是否达到目标 </span></span><br><span class="line">    <span class="keyword">else</span>    <span class="built_in">cout</span> &lt;&lt; <span class="string">"-1"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <hr>
 <h2 id="畜栏预定"><a href="#畜栏预定" class="headerlink" title="畜栏预定"></a>畜栏预定</h2><p>有N头牛在畜栏中吃草。</p>
 <p>每个畜栏在同一时间段只能提供给一头牛吃草，所以可能会需要多个畜栏。</p>
@@ -614,7 +619,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -641,9 +646,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -686,7 +689,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
