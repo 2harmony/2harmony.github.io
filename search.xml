@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[直方图最大矩形]]></title>
+    <url>%2F2019%2F04%2F25%2F19%2F</url>
+    <content type="text"><![CDATA[经典版直方图是由在公共基线处对齐的一系列矩形组成的多边形。 矩形具有相等的宽度，但可以具有不同的高度。 例如，图例左侧显示了由高度为2,1,4,5,1,3,3的矩形组成的直方图，矩形的宽度都为1：通常，直方图用于表示离散分布，例如，文本中字符的频率。 现在，请你计算在公共基线处对齐的直方图中最大矩形的面积。 图例右图显示了所描绘直方图的最大对齐矩形。 输入格式输入包含几个测试用例。 每个测试用例占据一行，用以描述一个直方图，并以整数n开始，表示组成直方图的矩形数目。 然后跟随n个整数h1，…，hn。 这些数字以从左到右的顺序表示直方图的各个矩形的高度。 每个矩形的宽度为1。 同行数字用空格隔开。 当输入用例为n=0时，结束输入，且该用例不用考虑。 输出格式对于每一个测试用例，输出一个整数，代表指定直方图中最大矩形的区域面积。 每个数据占一行。 请注意，此矩形必须在公共基线处对齐。 数据范围1≤n≤100000,0≤hi≤1000000000 输入样例：1237 2 1 4 5 1 3 34 1000 1000 1000 10000 输出样例：1284000 方法一yxc老师做法对于每一个矩形，去找左右两边能扩展到的最远边界，那么问题就转化为了找两次边界，而单调栈就是解决第一个比它小的元素，栈里存放下标栈内要满足单调性12345678910111213141516171819202122232425262728293031323334353637#include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;cstring&gt;using namespace std;const int N = 100005;int a[N], l[N], r[N], s[N], n; //初始数组，左右边界，数组模拟栈，数据个数typedef long long ll; //乘积可能爆long longvoid one_side(int b[])&#123; int top = 1; //栈顶指针 a[0] = -1; //哨兵元素，当s[top] == 0时，即前面所有元素比当前要入栈的a[i]大 //此时a[0] == -1 &lt; a[i](最小为0)，处理掉了边界情况b[i] = 1, wid = 1 - 1 + 1 = 1 for(int i = 1; i &lt;= n; i ++ ) &#123; while(a[s[top]] &gt;= a[i]) top --; b[i] = s[top] + 1; s[++ top] = i; &#125;&#125;int main()&#123; while(cin &gt;&gt; n, n) &#123; for(int i = 1; i &lt;= n; i ++ ) scanf("%d", &amp;a[i]); one_side(l); //找左边界 reverse(a + 1, a + n + 1); //转置找右边界 one_side(r); ll ans = 0; for(int i = 1, j = n ; i &lt;= n; i ++ , j -- ) ans = max(ans, (ll)a[i] * (n - l[j] + 1 - r[i] + 1)); cout &lt;&lt; ans &lt;&lt; endl; &#125; return 0;&#125; 方法二lyd做法 1234567891011121314151617181920212223242526272829303132333435#include &lt;iostream&gt;#include &lt;algorithm&gt;using namespace std;typedef long long ll;const int N = 100005;int a[N], w[N], s[N];int main()&#123; int n, top = 0; while(cin &gt;&gt; n, n) &#123; for(int i = 1; i &lt;= n; i ++ ) scanf("%d", &amp;a[i]); a[n + 1] = 0, top = 0; ll ans = 0; for(int i = 1; i &lt;= n + 1; i ++ ) &#123; if(a[i] &gt; s[top]) s[++ top] = a[i], w[top] = 1; else &#123; int width = 0; while(a[i] &lt; s[top]) &#123; width += w[top]; ans = max(ans, (ll)width * s[top]); top --; &#125; s[++ top] = a[i], w[top] = width + 1; &#125; &#125; cout &lt;&lt; ans &lt;&lt; endl; &#125; return 0;&#125; 扩展]]></content>
+      <categories>
+        <category>算竞指南</category>
+      </categories>
+      <tags>
+        <tag>单调栈</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[素数筛法]]></title>
+    <url>%2F2019%2F04%2F24%2F18%2F</url>
+    <content type="text"><![CDATA[Eratosthenes筛法时间复杂度: $\sum_{质数 p &lt;= N * {\frac Np}} = O(NloglogN) $ 思想:定义一个bool v数组表示是否是合数对于一个从2开始的整数，它的倍数(从2开始)都将是合数，将其全部筛去，剩下的即是素数。 优化对于一个数x，我们可能多次筛它，那么考虑 直接从$ x^2 $开始筛，因为$(x - 1) x$在$ x^2 $ 之内的数已经被前面的数筛掉了，所以从 ${x ^ 2} -&gt; {x * k} (k &lt;= n) $123456789101112const int N = 100;int v[N], m; //v为访问数组void primes(int n)&#123; for(int i = 2; i &lt;= n; i ++ ) &#123; if(v[i]) continue; for(int j = i; j &lt;= n / i; j ++ ) //从i^2 开始筛 v[i * j] = 1; &#125;&#125; 线性筛法思想:“从大到小累积质因子” 设数组v记录每个数的最小质因子 方法 若v[i] = i, 则i是质数(最小质因数是它本身)，记录在prime数组 用每个不大于v[i]的质数p，与i相乘构成新的合数，由于p &lt;= v[i]此时新数的最小质因数为p 时间复杂度分析每个数会被它的最小质因数筛一次, 时间复杂度为 $O(n)$1234567891011121314151617const int N = 100;int v[N], m; //v数组记录每个数的最小质因数int prime[N];void primes(int n)&#123; for(int i = 2; i &lt;= n; i ++ ) &#123; if(!v[i]) //最小质因数是他本身，记录答案 v[i] = i, prime[ ++ m] = i; for(int j = 1; j &lt;= m; j ++ ) //用小于v[i]的p去乘i &#123; if(!(prime[j] &lt;= v[i] &amp;&amp; prime[j] &lt;= n / i)) continue; //p &gt; v[i] 或 p * i &gt; n则退出 v[i * prime[j]] = prime[j]; //最小质因子筛数 &#125; &#125;&#125;]]></content>
+      <categories>
+        <category>模板</category>
+      </categories>
+      <tags>
+        <tag>质数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[字符串hash模板]]></title>
     <url>%2F2019%2F04%2F24%2F17%2F</url>
     <content type="text"><![CDATA[思想将每个字母映射成P进制数，一般进制数取131, 13331, 每个字母a - z相应的映射成 1 - 26, 这个数使用unsigned long long进行2^64的自动取模，避免了低效的mod运算。 求一段序列的hash值令$ “axybb” = 1242522 (1, 24, 25, 2, 2)$求xyb的hash值 $ axy = axyb - a * 123^{( 4 - (2 - 1) )} $, 将a左移进行对齐。 tips可以多取几组p(可以取大质数)进行运算，如果都相等则为同一个串。123456789101112131415161718192021222324252627282930313233343536#include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;cstring&gt;using namespace std;const int N = 1e6 + 5;typedef unsigned long long ull; //使用unsigned long long 进行自动溢出取模，减少低效的mod运算ull p = 131, h[N], power[N];char str[N];ull get(int l, int r) //计算子串hash值&#123; return h[r] - h[l - 1] * power[r - l + 1]; //类似于前缀和，则输入时下标从1开始，进行左对齐&#125;int main()&#123; scanf("%s", str + 1); //当l == 1时, l - 1 == 0的边界处理。 power[0] = 1; int n = strlen(str + 1); for(int i = 1; i &lt;= n; i ++ ) &#123; h[i] = h[i - 1] * p + str[i] - 'a' + 1; //p进制转换，ull自动取模 power[i] = power[i - 1] * p; //计算p乘方 &#125; int m, l1, l2, r1, r2; cin &gt;&gt; m; while(m -- ) &#123; scanf("%d %d %d %d", &amp;l1, &amp;r1, &amp;l2, &amp;r2); //两个子串 if(get(l1, r1) == get(l2, r2)) //相等判断 cout &lt;&lt; "Yes\n"; else cout &lt;&lt; "No\n"; &#125; return 0;&#125;]]></content>
@@ -9,17 +31,6 @@
       </categories>
       <tags>
         <tag>字符串hash</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[素数筛法]]></title>
-    <url>%2F2019%2F04%2F24%2F18%2F</url>
-    <content type="text"><![CDATA[Eratosthenes筛法时间复杂度: $\sum_{质数 p &lt;= N * {\frac Np}} = O(NloglogN) $ 思想:定义一个bool v数组表示是否是合数对于一个从2开始的整数，它的倍数(从2开始)都将是合数，将其全部筛去，剩下的即是素数。 优化对于一个数x，我们可能多次筛它，那么考虑 直接从x x开始筛，因为(x - 1) x在$ x^2 $ 之内的数已经被前面的数筛掉了，所以从 ${x ^ 2} -&gt; {x * k} (k &lt;= n) $123456789101112const int N = 100;int a[N], v[N], m;void primes(int n)&#123; for(int i = 2; i &lt;= n; i ++ ) &#123; if(v[i]) continue; for(int j = i; j &lt;= n / i; j ++ ) v[i * j] = 1; &#125;&#125; 12345678910111213141516const int N = 100;int a[N], v[N], m;int prime[N];void primes(int n)&#123; for(int i = 2; i &lt;= n; i ++ ) &#123; if(!v[i]) v[i] = i, prime[ ++ m] = i; for(int j = 1; j &lt;= m; j ++ ) &#123; if(!(prime[j] &lt;= v[i] &amp;&amp; prime[j] &lt;= n / i)) continue; v[i * prime[j]] = prime[j]; &#125; &#125;&#125;]]></content>
-      <categories>
-        <category>模板</category>
-      </categories>
-      <tags>
-        <tag>质数</tag>
       </tags>
   </entry>
   <entry>
