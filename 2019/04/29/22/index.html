@@ -96,20 +96,18 @@
 
 
 
-  <meta name="description" content="邻接表存图1234567891011int n, m, tot;		//n个点，m条边，tot为边的个数int edge[M], ver[M], Next[M];	//边权值，顶点，接着的边（tot序号）int d[N], head[N];		//每个点的最短距离，链表头bool v[N];		//访问标记void add(int x, int y, int z)	//起点，终点，边权值&amp;#123">
+  <meta name="description" content="邻接表存图1234567891011int n, m, tot;		//n个点，m条边，tot为边的个数	int edge[M], ver[M], Next[M];	//边权值，顶点，接着的边（tot序号）	int d[N], head[N];		//每个点的最短距离，链表头	bool v[N];		//访问标记	void add(int x, int y, int z)	//起点，终点，边权值">
 <meta name="keywords" content="链表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="邻接表">
 <meta property="og:url" content="http://yoursite.com/2019/04/29/22/index.html">
 <meta property="og:site_name" content="2harmony">
-<meta property="og:description" content="邻接表存图1234567891011int n, m, tot;		//n个点，m条边，tot为边的个数int edge[M], ver[M], Next[M];	//边权值，顶点，接着的边（tot序号）int d[N], head[N];		//每个点的最短距离，链表头bool v[N];		//访问标记void add(int x, int y, int z)	//起点，终点，边权值&amp;#123">
+<meta property="og:description" content="邻接表存图1234567891011int n, m, tot;		//n个点，m条边，tot为边的个数	int edge[M], ver[M], Next[M];	//边权值，顶点，接着的边（tot序号）	int d[N], head[N];		//每个点的最短距离，链表头	bool v[N];		//访问标记	void add(int x, int y, int z)	//起点，终点，边权值">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://i.postimg.cc/qRb2Kb6m/image.png">
-<meta property="og:updated_time" content="2019-05-09T16:30:38.110Z">
+<meta property="og:updated_time" content="2019-05-10T02:33:30.922Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="邻接表">
-<meta name="twitter:description" content="邻接表存图1234567891011int n, m, tot;		//n个点，m条边，tot为边的个数int edge[M], ver[M], Next[M];	//边权值，顶点，接着的边（tot序号）int d[N], head[N];		//每个点的最短距离，链表头bool v[N];		//访问标记void add(int x, int y, int z)	//起点，终点，边权值&amp;#123">
-<meta name="twitter:image" content="https://i.postimg.cc/qRb2Kb6m/image.png">
+<meta name="twitter:description" content="邻接表存图1234567891011int n, m, tot;		//n个点，m条边，tot为边的个数	int edge[M], ver[M], Next[M];	//边权值，顶点，接着的边（tot序号）	int d[N], head[N];		//每个点的最短距离，链表头	bool v[N];		//访问标记	void add(int x, int y, int z)	//起点，终点，边权值">
 
 
 
@@ -433,11 +431,29 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-10 00:30:38" itemprop="dateModified" datetime="2019-05-10T00:30:38+08:00">2019-05-10</time>
+                <time title="修改时间：2019-05-10 10:33:30" itemprop="dateModified" datetime="2019-05-10T10:33:30+08:00">2019-05-10</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/模板/" itemprop="url" rel="index"><span itemprop="name">模板</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -467,8 +483,10 @@
       
 
       
-        <h1 id="邻接表存图"><a href="#邻接表存图" class="headerlink" title="邻接表存图"></a>邻接表存图</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n, m, tot;		<span class="comment">//n个点，m条边，tot为边的个数</span></span><br><span class="line"><span class="keyword">int</span> edge[M], ver[M], Next[M];	<span class="comment">//边权值，顶点，接着的边（tot序号）</span></span><br><span class="line"><span class="keyword">int</span> d[N], head[N];		<span class="comment">//每个点的最短距离，链表头</span></span><br><span class="line"><span class="keyword">bool</span> v[N];		<span class="comment">//访问标记</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span>	<span class="comment">//起点，终点，边权值</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	ver[++ tot] = y;	<span class="comment">//终点</span></span><br><span class="line">	edge[tot] = z;			<span class="comment">//这个边的边权值</span></span><br><span class="line">	Next[tot] = head[x];		<span class="comment">//由于从链表头开始插入，则表头存这个边的序号</span></span><br><span class="line">	head[x] = tot;		<span class="comment">//这边链接的下一个连接原来的表头，最后传递遍历到0，表示结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id><a href="#" class="headerlink" title></a><a href="https://postimg.cc/qhKtVGLn" target="_blank" rel="noopener"><img src="https://i.postimg.cc/qRb2Kb6m/image.png" alt="image.png"></a></h2><hr>
+        <h1 id="邻接表存图"><a href="#邻接表存图" class="headerlink" title="邻接表存图"></a>邻接表存图</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n, m, tot;		<span class="comment">//n个点，m条边，tot为边的个数</span></span><br><span class="line">	<span class="keyword">int</span> edge[M], ver[M], Next[M];	<span class="comment">//边权值，顶点，接着的边（tot序号）</span></span><br><span class="line">	<span class="keyword">int</span> d[N], head[N];		<span class="comment">//每个点的最短距离，链表头</span></span><br><span class="line">	<span class="keyword">bool</span> v[N];		<span class="comment">//访问标记</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span>	<span class="comment">//起点，终点，边权值</span></span></span><br><span class="line"><span class="function">	</span>&#123;	</span><br><span class="line">		ver[++ tot] = y;	<span class="comment">//终点</span></span><br><span class="line">		edge[tot] = z;			<span class="comment">//这个边的边权值</span></span><br><span class="line">		Next[tot] = head[x];		<span class="comment">//由于从链表头开始插入，则表头存这个边的序号</span></span><br><span class="line">		head[x] = tot;		<span class="comment">//这边链接的下一个连接原来的表头，最后传递遍历到0，表示结束</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>[![image.png](https://i.postimg.cc/qRb2Kb6m/image.png)](https://postimg.cc/qhKtVGLn)
+</code></pre><hr>
+<hr>
 
       
     </div>
@@ -514,6 +532,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/29/23/" rel="prev" title="kmp模板 & 最小表示法">
+                kmp模板 & 最小表示法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -584,7 +606,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -662,7 +684,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -715,7 +741,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#邻接表存图"><span class="nav-number">1.</span> <span class="nav-text">邻接表存图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.1.</span> <span class="nav-text"></span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#邻接表存图"><span class="nav-number">1.</span> <span class="nav-text">邻接表存图</span></a></li></ol></div>
             
 
           </div>
