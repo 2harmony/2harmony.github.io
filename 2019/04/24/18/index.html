@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="Eratosthenes筛法(实用)时间复杂度: $\sum_{质数 p &amp;lt;= N * {\frac Np}}  = O(NloglogN) $ 思想:定义一个bool v数组表示是否是合数对于一个从2开始的整数，它的倍数(从2开始)都将是合数，将其全部筛去，剩下的即是素数。 优化对于一个数x，我们可能多次筛它，那么考虑 直接从$ x^2 $开始筛，因为$(x - 1) x$在$ x^2 $">
+  <meta name="description" content="Eratosthenes筛法(实用)时间复杂度: $\sum_{质数 p &amp;lt;= N * {\frac Np}}  = O(NloglogN) $ 思想:定义一个bool v数组表示是否是合数对于一个从2开始的整数，它的倍数(从2开始)都将是合数，将其全部筛去，剩下的即是素数。 优化对于一个数x，我们可能多次筛它，那么考虑 直接从$ x^2 $开始筛，因为在$ x^2 $ 之内的数已经被前面$">
 <meta name="keywords" content="质数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="素数筛法">
 <meta property="og:url" content="http://yoursite.com/2019/04/24/18/index.html">
 <meta property="og:site_name" content="2harmony">
-<meta property="og:description" content="Eratosthenes筛法(实用)时间复杂度: $\sum_{质数 p &amp;lt;= N * {\frac Np}}  = O(NloglogN) $ 思想:定义一个bool v数组表示是否是合数对于一个从2开始的整数，它的倍数(从2开始)都将是合数，将其全部筛去，剩下的即是素数。 优化对于一个数x，我们可能多次筛它，那么考虑 直接从$ x^2 $开始筛，因为$(x - 1) x$在$ x^2 $">
+<meta property="og:description" content="Eratosthenes筛法(实用)时间复杂度: $\sum_{质数 p &amp;lt;= N * {\frac Np}}  = O(NloglogN) $ 思想:定义一个bool v数组表示是否是合数对于一个从2开始的整数，它的倍数(从2开始)都将是合数，将其全部筛去，剩下的即是素数。 优化对于一个数x，我们可能多次筛它，那么考虑 直接从$ x^2 $开始筛，因为在$ x^2 $ 之内的数已经被前面$">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-03T06:16:18.308Z">
+<meta property="og:updated_time" content="2019-05-15T16:12:45.657Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="素数筛法">
-<meta name="twitter:description" content="Eratosthenes筛法(实用)时间复杂度: $\sum_{质数 p &amp;lt;= N * {\frac Np}}  = O(NloglogN) $ 思想:定义一个bool v数组表示是否是合数对于一个从2开始的整数，它的倍数(从2开始)都将是合数，将其全部筛去，剩下的即是素数。 优化对于一个数x，我们可能多次筛它，那么考虑 直接从$ x^2 $开始筛，因为$(x - 1) x$在$ x^2 $">
+<meta name="twitter:description" content="Eratosthenes筛法(实用)时间复杂度: $\sum_{质数 p &amp;lt;= N * {\frac Np}}  = O(NloglogN) $ 思想:定义一个bool v数组表示是否是合数对于一个从2开始的整数，它的倍数(从2开始)都将是合数，将其全部筛去，剩下的即是素数。 优化对于一个数x，我们可能多次筛它，那么考虑 直接从$ x^2 $开始筛，因为在$ x^2 $ 之内的数已经被前面$">
 
 
 
@@ -431,7 +431,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-03 14:16:18" itemprop="dateModified" datetime="2019-05-03T14:16:18+08:00">2019-05-03</time>
+                <time title="修改时间：2019-05-16 00:12:45" itemprop="dateModified" datetime="2019-05-16T00:12:45+08:00">2019-05-16</time>
               
             
           </span>
@@ -485,7 +485,7 @@
       
         <h2 id="Eratosthenes筛法-实用"><a href="#Eratosthenes筛法-实用" class="headerlink" title="Eratosthenes筛法(实用)"></a>Eratosthenes筛法(实用)</h2><p>时间复杂度: $\sum_{质数 p &lt;= N * {\frac Np}}  = O(NloglogN) $</p>
 <h3 id="思想"><a href="#思想" class="headerlink" title="思想:"></a>思想:</h3><p>定义一个bool v数组表示是否是合数<br>对于一个从2开始的整数，它的倍数(从2开始)都将是合数，将其全部筛去，剩下的即是素数。</p>
-<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>对于一个数x，我们可能多次筛它，那么考虑 直接从$ x^2 $开始筛，因为$(x - 1) x$<br>在$ x^2 $ 之内的数已经被前面的数筛掉了，所以从 ${x ^ 2} -&gt; {x * k}    (k &lt;= n) $<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> v[N], m;		<span class="comment">//v为访问数组</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">primes</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(v[i])	<span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt;= n / i; j ++ )	<span class="comment">//从i^2 开始筛</span></span><br><span class="line">			v[i * j] = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>对于一个数x，我们可能多次筛它，那么考虑 直接从$ x^2 $开始筛，因为<br>在$ x^2 $ 之内的数已经被前面$(x - 1) x$筛掉了，所以从 ${x ^ 2} -&gt; {x * k}    (k &lt;= n) $<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> v[N], m;		<span class="comment">//v为访问数组</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">primes</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(v[i])	<span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt;= n / i; j ++ )	<span class="comment">//从i^2 开始筛</span></span><br><span class="line">			v[i * j] = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <hr>
 <h2 id="线性筛法"><a href="#线性筛法" class="headerlink" title="线性筛法"></a>线性筛法</h2><h3 id="思想-1"><a href="#思想-1" class="headerlink" title="思想:"></a>思想:</h3><p>“从大到小累积质因子” 设数组v记录每个数的最小质因子</p>
 <h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
@@ -529,8 +529,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/24/17/" rel="next" title="字符串hash模板">
-                <i class="fa fa-chevron-left"></i> 字符串hash模板
+              <a href="/2019/04/23/16/" rel="next" title="并查集简单应用">
+                <i class="fa fa-chevron-left"></i> 并查集简单应用
               </a>
             
           </div>
@@ -539,8 +539,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/25/19/" rel="prev" title="直方图最大矩形">
-                直方图最大矩形 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/24/17/" rel="prev" title="字符串hash模板">
+                字符串hash模板 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
