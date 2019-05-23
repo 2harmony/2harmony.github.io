@@ -12,6 +12,14 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[字典trie模板]]></title>
+    <url>%2F2019%2F05%2F02%2F24%2F</url>
+    <content type="text"><![CDATA[标准版含义详解a[p][ch]的值为下一个节点的层数，即idx(第几个节点)，ch为字符指针配合p即可确定节点所在的具体层数与位置(N为所有字符串总长度，每层26个节点)a[p][ch]第一维共N * 26个节点通过 p = a[p][ch]来实现更新指向下一个节点12345678910111213141516171819202122232425262728const int N = ;int a[N][26], idx; //根节点在第0层 char str[N];bool end[N]; //结束数组(在最后一个元素下一层)void insert()&#123; int p = 0; //根节点为 0， p为在树中的层数 for(int i = 0; str[i]; i ++ ) &#123; char ch = str[i] - 'a'; //ch为字符指针 if(!a[p][ch]) a[p][ch] = ++ idx; //字符指针指向空，创建节点(a[p][ch]的值为下一层，即字符指针指向的地方)，新节点 p = a[p][ch]; //变换到下一个节点(下一层) &#125; end[p] = true; //结束标记，下一层的位置标记true &#125;bool search()&#123; int p = 0; //根节点，p为层数 for(int i = 0; str[i]; i ++ ) &#123; char ch = str[i] - 'a'; //字符指针 if(!a[p][ch]) return false; //指向空，返回false p = a[p][ch]; //节点变换到下一个(下一层) &#125; return end[p]; //整个字符串成功便利，判断是否有结束标记 &#125; 例题一: 前缀统计给定N个字符串S1,S2…SN，接下来进行M次询问，每次询问给定一个字符串T，求S1～SN中有多少个字符串是T的前缀。 输入字符串的总长度不超过106，仅包含小写字母。 输入格式第一行输入两个整数N，M。 接下来N行每行输入一个字符串Si。 接下来M行每行一个字符串T用以询问。 输出格式对于每个询问，输出一个整数表示答案。 每个答案占一行。 输入样例：1234563 2abbcabcabcefg 输出样例：1220 题意分析对前n个字符串进行建树，即插入树的insert()操作，对于后m个字符进行search()操作, 判断每个给出的字符串str在n中有多少个为str的前缀。细节处理end[p] -&gt; 变为cnt[p]，从0 1变为统计次数，查询时sum += cnt[p], 遇到a[p][ch]指向空则break退出for循环后 return sum 代码1234567891011121314151617181920212223242526272829303132333435363738394041424344#include &lt;iostream&gt;#include &lt;algorithm&gt;using namespace std;const int N = 500000, M = 1000010;int a[N][26], idx, cnt[N];char str[N];void insert()&#123; int p = 0; for(int i = 0; str[i]; i ++ ) &#123; int ch = str[i] - 'a'; if(!a[p][ch]) a[p][ch] = ++ idx; p = a[p][ch]; &#125; cnt[p] ++; //变为统计次数&#125;int search()&#123; int p = 0, sum = 0; for(int i = 0; str[i]; i ++ ) &#123; int ch = str[i] - 'a'; if(!a[p][ch]) break; //没查询到，退出返回，可能为0或正数 p = a[p][ch]; sum += cnt[p]; &#125; return sum;&#125;int main()&#123; int n, m; cin &gt;&gt; n &gt;&gt; m; while(n -- ) //前n个插入操作 scanf("%s", str), insert(); while(m -- ) //后m个查询n中有多少个为str的前缀 &#123; scanf("%s", str); cout &lt;&lt; search() &lt;&lt; endl; &#125; return 0;&#125; 例题二: 最大异或对在给定的N个整数A1，A2……AN中选出两个进行xor（异或）运算，得到的结果最大是多少？ 输入格式第一行输入一个整数N。 第二行输入N个整数A1～AN。 输出格式输出一个整数表示答案。 数据范围1≤N≤105,0≤Ai&lt;231 输入样例：1231 2 3 输出样例：3 题意分析将每个A_i视为一个31位的01串，对这n个数进行建树依次insert(A_i)，共有N * 32个节点，每个节点为0 1其中之一之后对每个串进行查询操作，由于是异或，则应每次判断是否存在num相异的节点，存在则 p = a[p][!num]更新，res对应位变为1(xor相异结果为true)不存在则按原来更新p = a[p][num], 但res此时对应位不做改变 代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546#include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;cstring&gt;using namespace std;const int N = 100005;int trie[N * 32][2], a[N], idx; //共可能存在N * 32个节点，每个节点0 1两种情况, idx为节点下标void insert(int x) //建树(插入)&#123; int p = 0; for(int i = 30; ~i; i -- ) //从高位到低位遍历0 1串 &#123; int num = x &gt;&gt; i &amp; 1; if(!trie[p][num]) trie[p][num] = ++ idx; p = trie[p][num]; &#125;&#125;int search(int x) //查询&#123; int p = 0, res = 0; for(int i = 30; ~i; i -- ) &#123; int num = x &gt;&gt; i &amp; 1; if(trie[p][!num]) //查询反向num值节点是否存在 p = trie[p][!num], res |= 1; else p = trie[p][num]; //不存在则原样更新 if(i) res &lt;&lt;= 1; //每次向左挪一位 &#125; return res;&#125;int main()&#123; int n, x, ans = 0; cin &gt;&gt; n; for(int i = 0; i &lt; n; i ++ ) &#123; scanf("%d", &amp;a[i]); insert(a[i]); &#125; for(int i = 0; i &lt; n; i ++ ) ans = max(ans, search(a[i])); cout &lt;&lt; ans &lt;&lt; endl; return 0;&#125;]]></content>
+      <tags>
+        <tag>字典trie</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[zyb的面试 - HDU - 6468]]></title>
     <url>%2F2019%2F05%2F02%2F25%2F</url>
     <content type="text"><![CDATA[今天zyb参加一场面试,面试官听说zyb是ACMer之后立马抛出了一道算法题给zyb:有一个序列,是1到n的一种排列,排列的顺序是字典序小的在前,那么第k个数字是什么?例如n=15,k=7, 排列顺序为1, 10, 11, 12, 13, 14, 15, 2, 3, 4, 5, 6, 7, 8, 9;那么第7个数字就是15.那么,如果你处在zyb的场景下,你能解决这个问题吗? InputT组样例(T&lt;=100)两个整数n和k(1&lt;=n&lt;=1e6,1&lt;=k&lt;=n),n和k代表的含义如上文 Output输出1-n之中字典序第k小的数字 Sample Input115 7 Sample Output15 解题思想对于这题来说，是一个数位问题，第一想法是数位dp或者全转字符串再按字典序排序(~然而都想复杂了~)注意到一个树下面最多会产生10个子树，又是字典序搜，联想到dfs，如果是bfs那就是正常的数字序.子树实现 利用for循环10种情况 定义一个新的变量, 不会影响来扩展的10种情况的原情况 细节处理 如果找到答案,标记flag = 1, 在每次dfs开头判断,如果找到,后面的操作不必要进行, 相当于结束递归剩下的函数全部出栈123456789101112131415161718192021222324252627282930313233343536#include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;cstdio&gt;using namespace std;int n, k, ans, flag, step;void dfs(int x)&#123; if(flag) return ; //找到答案, 剩余函数全出栈 if(step == k) //步数,相等,找到答案 &#123; flag = 1; ans = x; return ; &#125; step ++; for(int i = 0; i &lt;= 9; i ++ ) //10个分支情况子树, 利用for循环实现 &#123; int u = x * 10 + i; //注意利用u来实现不影响10种情况的来源 if(u &gt; n) return ; //即时判断 dfs(u); //搜子情况 &#125;&#125;int main()&#123; int t; cin &gt;&gt; t; while(t -- ) &#123; flag = 0, step = 1; cin &gt;&gt; n &gt;&gt; k; for(int i = 1; i &lt;= 9; i ++ ) //从1 ~ 9开始搜, 区别于上面的 * 10 + i, 但也满足找到答案直接出栈. dfs(i); cout &lt;&lt; ans &lt;&lt; endl; &#125; return 0; &#125;]]></content>
@@ -23,11 +31,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[字典trie模板]]></title>
-    <url>%2F2019%2F05%2F02%2F24%2F</url>
-    <content type="text"><![CDATA[标准版含义详解a[p][ch]的值为下一个节点的层数，即idx(第几个节点)，ch为字符指针配合p即可确定节点所在的具体层数与位置(N层，每层26个节点)a[]第一维共N * 26个节点通过 p = a[p][ch]来实现更新指向下一个节点12345678910111213141516171819202122232425262728const int N = ;int a[N][26], idx; //根节点在第0层 char str[N];bool end[N]; //结束数组(在最后一个元素下一层)void insert()&#123; int p = 0; //根节点为 0， p为在树中的层数 for(int i = 0; str[i]; i ++ ) &#123; char ch = str[i] - 'a'; //ch为字符指针 if(!a[p][ch]) a[p][ch] = ++ idx; //字符指针指向空，创建节点(a[p][ch]的值为下一层，即字符指针指向的地方)，新节点 p = a[p][ch]; //变换到下一个节点(下一层) &#125; end[p] = true; //结束标记，下一层的位置标记true &#125;bool search()&#123; int p = 0; //根节点，p为层数 for(int i = 0; str[i]; i ++ ) &#123; char ch = str[i] - 'a'; //字符指针 if(!a[p][ch]) return false; //指向空，返回false p = a[p][ch]; //节点变换到下一个(下一层) &#125; return end[p]; //整个字符串成功便利，判断是否有结束标记 &#125; 例题一: 前缀统计给定N个字符串S1,S2…SN，接下来进行M次询问，每次询问给定一个字符串T，求S1～SN中有多少个字符串是T的前缀。 输入字符串的总长度不超过106，仅包含小写字母。 输入格式第一行输入两个整数N，M。 接下来N行每行输入一个字符串Si。 接下来M行每行一个字符串T用以询问。 输出格式对于每个询问，输出一个整数表示答案。 每个答案占一行。 输入样例：1234563 2abbcabcabcefg 输出样例：1220 题意分析对前n个字符串进行建树，即插入树的insert()操作，对于后m个字符进行search()操作, 判断每个给出的字符串str在n中有多少个为str的前缀。细节处理end[p] -&gt; 变为cnt[p]，从0 1变为统计次数，查询时sum += cnt[p], 遇到a[p][ch]指向空则break退出for循环后 return sum 代码1234567891011121314151617181920212223242526272829303132333435363738394041424344#include &lt;iostream&gt;#include &lt;algorithm&gt;using namespace std;const int N = 500000, M = 1000010;int a[N][26], idx, cnt[N];char str[N];void insert()&#123; int p = 0; for(int i = 0; str[i]; i ++ ) &#123; int ch = str[i] - 'a'; if(!a[p][ch]) a[p][ch] = ++ idx; p = a[p][ch]; &#125; cnt[p] ++; //变为统计次数&#125;int search()&#123; int p = 0, sum = 0; for(int i = 0; str[i]; i ++ ) &#123; int ch = str[i] - 'a'; if(!a[p][ch]) break; //没查询到，退出返回，可能为0或正数 p = a[p][ch]; sum += cnt[p]; &#125; return sum;&#125;int main()&#123; int n, m; cin &gt;&gt; n &gt;&gt; m; while(n -- ) //前n个插入操作 scanf("%s", str), insert(); while(m -- ) //后m个查询n中有多少个为str的前缀 &#123; scanf("%s", str); cout &lt;&lt; search() &lt;&lt; endl; &#125; return 0;&#125; 例题二: 最大异或对在给定的N个整数A1，A2……AN中选出两个进行xor（异或）运算，得到的结果最大是多少？ 输入格式第一行输入一个整数N。 第二行输入N个整数A1～AN。 输出格式输出一个整数表示答案。 数据范围1≤N≤105,0≤Ai&lt;231 输入样例：31 2 3 输出样例：3]]></content>
+    <title><![CDATA[邻接表]]></title>
+    <url>%2F2019%2F04%2F29%2F22%2F</url>
+    <content type="text"><![CDATA[邻接表存图1234567891011int n, m, tot; //n个点，m条边，tot为边的个数 int edge[M], ver[M], Next[M]; //边权值，顶点，接着的边（tot序号） int d[N], head[N]; //每个点的最短距离，链表头 bool v[N]; //访问标记 void add(int x, int y, int z) //起点，终点，边权值 &#123; ver[++ tot] = y; //终点 edge[tot] = z; //这个边的边权值 Next[tot] = head[x]; //由于从链表头开始插入，则表头存这个边的序号 head[x] = tot; //这边链接的下一个连接原来的表头，最后传递遍历到0，表示结束 &#125; [![image.png](https://i.postimg.cc/qRb2Kb6m/image.png)](https://postimg.cc/qhKtVGLn)]]></content>
+      <categories>
+        <category>模板</category>
+      </categories>
       <tags>
-        <tag>字典trie</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
@@ -39,17 +50,6 @@
       </categories>
       <tags>
         <tag>kmp &amp; 最小表示法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[邻接表]]></title>
-    <url>%2F2019%2F04%2F29%2F22%2F</url>
-    <content type="text"><![CDATA[邻接表存图1234567891011int n, m, tot; //n个点，m条边，tot为边的个数 int edge[M], ver[M], Next[M]; //边权值，顶点，接着的边（tot序号） int d[N], head[N]; //每个点的最短距离，链表头 bool v[N]; //访问标记 void add(int x, int y, int z) //起点，终点，边权值 &#123; ver[++ tot] = y; //终点 edge[tot] = z; //这个边的边权值 Next[tot] = head[x]; //由于从链表头开始插入，则表头存这个边的序号 head[x] = tot; //这边链接的下一个连接原来的表头，最后传递遍历到0，表示结束 &#125; [![image.png](https://i.postimg.cc/qRb2Kb6m/image.png)](https://postimg.cc/qhKtVGLn)]]></content>
-      <categories>
-        <category>模板</category>
-      </categories>
-      <tags>
-        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
