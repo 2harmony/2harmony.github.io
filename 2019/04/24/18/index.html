@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="2harmony">
 <meta property="og:description" content="Eratosthenes筛法(实用)时间复杂度: $\sum_{质数 p &amp;lt;= N * {\frac Np}}  = O(NloglogN) $ 思想:定义一个bool v数组表示是否是合数对于一个从2开始的整数，它的倍数(从2开始)都将是合数，将其全部筛去，剩下的即是素数。 优化对于一个数x，我们可能多次筛它，那么考虑 直接从$ x^2 $开始筛，因为在$ x^2 $ 之内的数已经被前面$">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-15T16:12:45.657Z">
+<meta property="og:updated_time" content="2019-05-26T14:39:17.407Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="素数筛法">
 <meta name="twitter:description" content="Eratosthenes筛法(实用)时间复杂度: $\sum_{质数 p &amp;lt;= N * {\frac Np}}  = O(NloglogN) $ 思想:定义一个bool v数组表示是否是合数对于一个从2开始的整数，它的倍数(从2开始)都将是合数，将其全部筛去，剩下的即是素数。 优化对于一个数x，我们可能多次筛它，那么考虑 直接从$ x^2 $开始筛，因为在$ x^2 $ 之内的数已经被前面$">
@@ -431,7 +431,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-16 00:12:45" itemprop="dateModified" datetime="2019-05-16T00:12:45+08:00">2019-05-16</time>
+                <time title="修改时间：2019-05-26 22:39:17" itemprop="dateModified" datetime="2019-05-26T22:39:17+08:00">2019-05-26</time>
               
             
           </span>
@@ -493,7 +493,8 @@
 <li>用每个不大于v[i]的质数p，与i相乘构成新的合数，由于p &lt;= v[i]<br>此时新数的最小质因数为p</li>
 </ul>
 <h3 id="时间复杂度分析"><a href="#时间复杂度分析" class="headerlink" title="时间复杂度分析"></a>时间复杂度分析</h3><p>每个数会被它的最小质因数筛一次, 时间复杂度为 $O(n)$<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> v[N], m;		<span class="comment">//v数组记录每个数的最小质因数</span></span><br><span class="line"><span class="keyword">int</span> prime[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">primes</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(!v[i])			<span class="comment">//最小质因数是他本身，记录答案</span></span><br><span class="line">			v[i] = i, prime[ ++ m] = i;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j ++ )		<span class="comment">//用小于v[i]的p去乘i</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(!(prime[j] &lt;= v[i] &amp;&amp; prime[j] &lt;= n / i))	<span class="keyword">continue</span>;		</span><br><span class="line">							<span class="comment">//p &gt; v[i] 或 p * i &gt; n则退出</span></span><br><span class="line">			v[i * prime[j]] = prime[j];			<span class="comment">//最小质因子筛数</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+<h3 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h3><p>设n分解的质因数形式为$n= a_1^n1 <em> a_2^n2 </em> a_3^n3 …… <em> a_n^n$<br>那么在1-n-1中与n互质的个数为<br>cnt = n </em> (1 – 1 / a1) <em> (1 – 1 / a2) </em> …… * (1 – 1 / an)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int euler(int n)</span><br><span class="line">&#123;</span><br><span class="line">	  int res = n;</span><br><span class="line">	  for(int i = 2; i * i &lt;= res; i ++)</span><br><span class="line">	  &#123;</span><br><span class="line">		  if(n % i == 0)				//如果有这个质因数</span><br><span class="line">           res = res / i * (i-1);		//防止溢出，先除再乘</span><br><span class="line">        while(n % i == 0)				//除去相同的因子，因为只需一次即可</span><br><span class="line">			 n /= i;</span><br><span class="line">&#125;</span><br><span class="line">	if(n! = 1)						//可能因子超过 根号n</span><br><span class="line">		res = res / n * (n - 1);			//再乘上它的1- 1/num</span><br><span class="line">	return n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -529,8 +530,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/24/17/" rel="next" title="字符串hash模板">
-                <i class="fa fa-chevron-left"></i> 字符串hash模板
+              <a href="/2019/04/23/16/" rel="next" title="并查集简单应用">
+                <i class="fa fa-chevron-left"></i> 并查集简单应用
               </a>
             
           </div>
@@ -539,8 +540,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/25/19/" rel="prev" title="直方图最大矩形(单调栈)">
-                直方图最大矩形(单调栈) <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/24/17/" rel="prev" title="字符串hash模板">
+                字符串hash模板 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -612,7 +613,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -696,7 +697,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -749,7 +754,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Eratosthenes筛法-实用"><span class="nav-number">1.</span> <span class="nav-text">Eratosthenes筛法(实用)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#思想"><span class="nav-number">1.1.</span> <span class="nav-text">思想:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化"><span class="nav-number">1.2.</span> <span class="nav-text">优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性筛法"><span class="nav-number">2.</span> <span class="nav-text">线性筛法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#思想-1"><span class="nav-number">2.1.</span> <span class="nav-text">思想:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">2.2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度分析"><span class="nav-number">2.3.</span> <span class="nav-text">时间复杂度分析</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Eratosthenes筛法-实用"><span class="nav-number">1.</span> <span class="nav-text">Eratosthenes筛法(实用)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#思想"><span class="nav-number">1.1.</span> <span class="nav-text">思想:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化"><span class="nav-number">1.2.</span> <span class="nav-text">优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性筛法"><span class="nav-number">2.</span> <span class="nav-text">线性筛法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#思想-1"><span class="nav-number">2.1.</span> <span class="nav-text">思想:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">2.2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度分析"><span class="nav-number">2.3.</span> <span class="nav-text">时间复杂度分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#欧拉函数"><span class="nav-number">2.4.</span> <span class="nav-text">欧拉函数</span></a></li></ol></li></ol></div>
             
 
           </div>
